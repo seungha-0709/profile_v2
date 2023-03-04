@@ -1,3 +1,4 @@
+import React from "react";
 import {
   headerStyle,
   profileImg,
@@ -5,6 +6,7 @@ import {
   typo_link,
 } from "../styles/styles.css";
 import LinkText from "./ui/LinkText";
+
 const Header = () => {
   return (
     <header className={headerStyle}>

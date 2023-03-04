@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import React, { Suspense, lazy } from "react";
 import { rootStyle, container } from "../src/styles/styles.css";
 
 const HeaderComponent = lazy(() => import("../src/components/Header"));

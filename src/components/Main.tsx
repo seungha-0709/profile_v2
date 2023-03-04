@@ -1,23 +1,13 @@
-import { lazy } from "react";
+import React, { lazy } from "react";
 import {
   typo_h2,
   typo_h3,
-  list_ul,
-  nested_list_ul,
   flexSpaceBetween,
   asideStyle,
 } from "../styles/styles.css";
-import CodeText from "./ui/CodeText";
+import { TECH_SKILL } from "../data/experiences";
 
-const SKILL_SET = [
-  "Javascript",
-  "Typescript",
-  "React",
-  "React Native",
-  "NextJS",
-  "Graphql(apollo)",
-];
-
+const CodeComponent = lazy(() => import("./ui/CodeText"));
 const WorkComponent = lazy(() => import("./Works"));
 
 const Main = () => {
@@ -30,8 +20,8 @@ const Main = () => {
       <aside className={asideStyle}>
         <div>
           <h2 className={typo_h2}>Tech Skill</h2>
-          {SKILL_SET.map((skill: string) => {
-            return <CodeText key={skill}>{skill}</CodeText>;
+          {TECH_SKILL.map((skill: string) => {
+            return <CodeComponent key={skill}>{skill}</CodeComponent>;
           })}
         </div>
         <div>

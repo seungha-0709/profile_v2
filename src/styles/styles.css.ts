@@ -5,6 +5,10 @@ import {
   style,
 } from "@vanilla-extract/css";
 
+const textL = fontFace({
+  src: "url(/Pretendard-Light.subset.woff2) format('woff2')",
+});
+
 const textR = fontFace({
   src: "url(/Pretendard-Regular.subset.woff2) format('woff2')",
 });
@@ -44,7 +48,7 @@ export const vars = createGlobalTheme(":root", {
 
 globalStyle("html, body", {
   margin: 0,
-  fontFamily: textR,
+  fontFamily: textL,
   fontSize: 14,
   lineHeight: 1.6,
   color: vars.color.COLOR_04,
@@ -143,22 +147,12 @@ export const typo_h3 = style([
   },
 ]);
 
-export const list_ul = style({
-  listStyle: "none",
-  padding: 0,
-  paddingLeft: 20,
+export const nested_list_li = style({
+  listStyleType: "none",
+  marginBottom: 4,
 });
 
-export const nested_list_ul = style([
-  list_ul,
-  {
-    selectors: {
-      [`${list_ul} > li.&::before`]: {
-        content: "· ",
-      },
-    },
-  },
-]);
+export const list_li = style([nested_list_li, typo_c03, typo_M]);
 
 export const flex = style({
   display: "flex",
