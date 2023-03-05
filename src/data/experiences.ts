@@ -1,8 +1,9 @@
 type Experience = {
+  id: string;
   position: string;
   link?: string;
   period: string;
-  list: { title: string; link?: string; item: string[] }[];
+  list: { id: string; title: string; link?: string; item: string[] }[];
 };
 
 type TechSkill = string[];
@@ -22,10 +23,12 @@ export const TECH_SKILL: TechSkill = [
 ];
 
 const EXPERIENCE_1: Experience = {
+  id: "EXPERIENCE_1",
   position: "프런트엔드 엔지니어 (닥터나우)",
   period: "2022. 6. ~ 현재",
   list: [
     {
+      id: "EXPERIENCE_1_0",
       title: "닥터나우 모바일 애플리케이션 화면 개발",
       item: [
         "React Native (Redux-saga, React-Navigation, Jest, Styled-components, react-native-chart-kit, etc. ",
@@ -36,6 +39,7 @@ const EXPERIENCE_1: Experience = {
       ],
     },
     {
+      id: "EXPERIENCE_1_1",
       title: "웹 애플리케이션 개발 관련",
       item: [
         "React, Recoil, NextJS (React-Query, Antd, etc.)",
@@ -48,10 +52,12 @@ const EXPERIENCE_1: Experience = {
 };
 
 const EXPERIENCE_2: Experience = {
+  id: "EXPERIENCE_2",
   position: "웹 프런트엔드 엔지니어 (어퍼코리아)",
   period: "2020. 12. ~ 2022. 6.",
   list: [
     {
+      id: "EXPERIENCE_2_0",
       title:
         "ERP 프런트엔드 개발 (해당 애플리케이션은 현재 가비아에서 판매 중.)",
       link: "erp.gabia.com/service",
@@ -63,6 +69,7 @@ const EXPERIENCE_2: Experience = {
       ],
     },
     {
+      id: "EXPERIENCE_2_1",
       title: "신사업 프로젝트 프런트엔드 영역 전체 개발",
       link: "aicy.ai/",
       item: [

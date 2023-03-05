@@ -53,6 +53,7 @@ globalStyle("html, body", {
   lineHeight: 1.6,
   color: vars.color.COLOR_04,
   boxSizing: "border-box",
+  position: "relative",
 });
 
 globalStyle("ul", {
@@ -76,6 +77,11 @@ export const container = style({
 export const typo_link = style({
   color: vars.color.COLOR_02,
   textDecoration: "none",
+  marginRight: 4,
+  ":hover": {
+    textDecoration: "underline",
+  },
+  cursor: "pointer",
 });
 
 export const typo_code = style({
@@ -139,7 +145,7 @@ export const typo_h2 = style([
 ]);
 
 export const typo_h3 = style([
-  typo_SB,
+  typo_B,
   typo_c02,
   {
     fontSize: 16,
@@ -171,6 +177,14 @@ export const flexAlignCenter = style([
   flex,
   {
     alignItems: "center",
+  },
+]);
+
+export const flexTextAlignCenter = style([
+  flexAlignCenter,
+  {
+    gap: 0,
+    justifyContent: "flex-start",
   },
 ]);
 
@@ -211,4 +225,38 @@ export const profileImg = style({
   backgroundImage: "url(/profile_v2_gray.png)",
   backgroundPosition: "center",
   backgroundSize: "cover",
+});
+
+export const tooltipBackdrop = style({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  zIndex: 5,
+  width: "100%",
+  height: "100vh",
+  background: "transparent",
+});
+
+export const tooltipContainer = style([
+  flexTextAlignCenter,
+  {
+    border: `1px solid ${vars.color.COLOR_06}`,
+    borderRadius: 20,
+    padding: 20,
+    width: 400,
+    height: 80,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "stretch",
+    background: "rgba(253, 253, 253, 0.6)",
+    backdropFilter: "blur(5px)",
+    boxShadow: `5px 5px 12px ${vars.color.COLOR_07}`,
+    position: "absolute",
+    top: 140,
+    left: 580,
+  },
+]);
+
+export const iconMarginRight = style({
+  marginRight: 8,
 });

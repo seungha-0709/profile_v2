@@ -13,24 +13,28 @@ const Works = () => {
     <>
       {EXPERIENCES.map((item) => {
         return (
-          <>
+          <div key={item.id}>
             <div className={flexSpaceBetween}>
               <h3 className={typo_h3}>{item.position}</h3>
               <span>{item.period}</span>
             </div>
             {item.list.map((work) => {
               return (
-                <ul>
+                <ul key={work.id}>
                   <li className={list_li}>{work.title}</li>
                   <ul>
-                    {work.item.map((workItem) => {
-                      return <li className={nested_list_li}>{workItem}</li>;
+                    {work.item.map((workItem, index) => {
+                      return (
+                        <li key={index} className={nested_list_li}>
+                          {workItem}
+                        </li>
+                      );
                     })}
                   </ul>
                 </ul>
               );
             })}
-          </>
+          </div>
         );
       })}
     </>
