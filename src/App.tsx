@@ -43,7 +43,7 @@ function App() {
       resizeObserver.disconnect();
       resizeObserver = null;
     };
-  }, [componentRef.current]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [componentRef.current, viewWidth]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const currentViewport = useMemo(() => {
     if (!viewWidth) {
