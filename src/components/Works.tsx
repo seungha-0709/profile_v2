@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  typo_h2,
   typo_h3,
   list_li,
   nested_list_li,

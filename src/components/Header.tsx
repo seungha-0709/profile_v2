@@ -1,10 +1,5 @@
 import React, { lazy, useState } from "react";
-import {
-  headerStyle,
-  profileImg,
-  header_H1,
-  typo_link,
-} from "../styles/styles.css";
+import { headerStyle, profileImg, header_H1 } from "../styles/styles.css";
 
 const LinkComponent = lazy(() => import("./ui/LinkText"));
 const TooltipComponent = lazy(() => import("./ui/Tooltip"));

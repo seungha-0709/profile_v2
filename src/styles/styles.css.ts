@@ -153,6 +153,32 @@ export const typo_h3 = style([
   },
 ]);
 
+globalStyle("input", {
+  height: 28,
+  width: 300,
+  display: "block",
+  border: `1px solid ${vars.color.COLOR_06}`,
+  borderRadius: 10,
+  padding: "4px 10px",
+  fontFamily: typo_R,
+  color: vars.color.COLOR_03,
+  boxSizing: "border-box",
+});
+
+globalStyle("textarea", {
+  width: "100%",
+  height: 300,
+  margin: "20px 0",
+  resize: "none",
+  display: "block",
+  border: `1px solid ${vars.color.COLOR_06}`,
+  borderRadius: 10,
+  padding: "20px",
+  fontFamily: typo_R,
+  color: vars.color.COLOR_03,
+  boxSizing: "border-box",
+});
+
 export const nested_list_li = style({
   listStyleType: "none",
   marginBottom: 4,
@@ -248,10 +274,11 @@ export const tooltipContainer = style([
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "stretch",
-    background: "rgba(253, 253, 253, 0.6)",
+    background: "rgba(255, 255, 255, 0.6)",
     backdropFilter: "blur(5px)",
     boxShadow: `5px 5px 12px ${vars.color.COLOR_07}`,
     position: "absolute",
+    zIndex: 10,
     top: 140,
     left: 580,
   },
@@ -260,3 +287,36 @@ export const tooltipContainer = style([
 export const iconMarginRight = style({
   marginRight: 8,
 });
+
+export const mailModalBackdrop = style({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  zIndex: 15,
+  width: "100%",
+  height: "100%",
+  background: "rgba(255, 255, 255, 0.6)",
+  backdropFilter: "blur(6px)",
+});
+
+export const mailModalContainer = style([
+  flexTextAlignCenter,
+  {
+    border: `1px solid ${vars.color.COLOR_06}`,
+    borderRadius: 20,
+    padding: 40,
+    boxSizing: "border-box",
+    width: 800,
+    height: 600,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    alignItems: "stretch",
+    background: "rgba(255, 255, 255, 1)",
+    boxShadow: `8px 8px 16px ${vars.color.COLOR_07}`,
+    position: "fixed",
+    zIndex: 20,
+    top: 160,
+    left: "50%",
+    transform: "translate(-50%, 0%)",
+  },
+]);

@@ -11,17 +11,19 @@ interface LinkTextProps extends PropsWithChildren {
 }
 
 const LinkText = (props: LinkTextProps) => {
-  const handleLink = () => {
+  const handleLink = (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+    event.stopPropagation();
     if (props.linkTo) {
       window.open(props.linkTo);
       return;
     }
+    console.log("????");
     props.onClickAction && props.onClickAction();
   };
 
   return (
     <>
-      <span onClick={handleLink} className={typo_link}>
+      <span onClick={(e) => handleLink(e)} className={typo_link}>
         {props.children}
       </span>
       <IconLinkComponent />

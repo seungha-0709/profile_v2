@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, useState } from "react";
 import {
   flexTextAlignCenter,
   tooltipBackdrop,
@@ -12,18 +12,24 @@ type TooltipPropsType = {
 };
 
 const LinkText = lazy(() => import("../ui/LinkText"));
+const MailModal = lazy(() => import("../ui/MailModal"));
 const IconMail = lazy(() => import("../icons/IconMail"));
 const IconGithub = lazy(() => import("../icons/IconGithub"));
 const IconLinkedin = lazy(() => import("../icons/IconLinkedin"));
 
 const Tooltip = (props: TooltipPropsType) => {
+  const [isShowMailModal, setIsShowMailModal] = useState<boolean>(false);
   const { onClose } = props;
+
   return (
-    <div onClick={onClose} className={tooltipBackdrop}>
+    <>
+      <div onClick={onClose} className={tooltipBackdrop}></div>
       <div className={tooltipContainer}>
         <div className={flexTextAlignCenter}>
           <IconMail />
-          <LinkText>seunghakim.x+cv@gmail.com</LinkText>
+          <LinkText onClickAction={() => setIsShowMailModal(true)}>
+            seunghakim.x+cv@gmail.com
+          </LinkText>
         </div>
         <div className={flexTextAlignCenter}>
           <IconGithub />
@@ -38,7 +44,10 @@ const Tooltip = (props: TooltipPropsType) => {
           </LinkText>
         </div>
       </div>
-    </div>
+      {isShowMailModal && (
+        <MailModal onClose={() => setIsShowMailModal(false)} />
+      )}
+    </>
   );
 };
 
